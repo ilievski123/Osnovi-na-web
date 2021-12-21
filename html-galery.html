@@ -6,6 +6,17 @@
          <link rel = "stylesheet" type = "text/css"
          href = "proekt-css.css">
          <script src = "js-gallery.js"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+         <script>
+             $(document).ready(function(){
+    $("#filtriraj").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#komentari div").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+         </script>
          </head>
 
          <body>

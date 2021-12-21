@@ -12,8 +12,8 @@ function funk(){
 
     const tatko = document.createElement("div");
     let val1 = document.createElement("h2");
-    let val2 = document.createElement("div");
-    let val3 = document.createElement("div");
+    let val2 = document.createElement("p");
+    let val3 = document.createElement("p");
 
     val3.style.float = "right";
     val3.style.color = "grey";
@@ -32,6 +32,7 @@ function funk(){
     tatko.appendChild(val3);
 
     document.getElementById("bl").appendChild(tatko);
-
+    document.getElementById("bl").appendChild(document.createElement('br'));
+    document.getElementById("bl").appendChild(document.createElement('hr'));
     }
 }

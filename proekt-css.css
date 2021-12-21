@@ -78,3 +78,16 @@ div
     margin-top: 20px;
     text-align: center;
 }
+
+.linkovi {
+    display: inline;
+    margin-left:10px;
+    margin-right:10px;
+}
+
+ul li a img:hover{
+    /* position: relative;
+    width: 250;
+    height: 300; */
+    transform: scale(1.1);
+} 

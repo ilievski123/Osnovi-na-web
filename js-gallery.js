@@ -3,14 +3,14 @@ let gallery = [
         id: 1,
         url: 'slika2.jpg',
         likes: 123,
-        comments:['eden','dva'],
+        comments:['eden','dva', 'tri'],
         liked: 0,
     },
     {
         id: 2,
         url: 'slika3.jpg',
         likes: 12,
-        comments:[],
+        comments:['test1', 'test2'],
         liked: 0
     }
 ];
@@ -25,6 +25,7 @@ function load() {
 }
 
 function createGallery(){
+
     let gal = document.getElementById("gg");
     let gall = document.createElement("div");
     gall.id = "tatko";
@@ -63,10 +64,23 @@ function createGallery(){
         
         // Comments
         const kom_parent = document.createElement("div");
-        const title = document.createElement("div");
+        const title = document.createElement("p");
+        var i = document.createElement("input"); //input element, text
+        i.setAttribute('type',"text");
+        i.setAttribute('name',"username");
+        i.placeholder = "Search comment.."
+        i.id = "filtriraj";
+        i.style.float = 'right';
+        var x = document.createElement("p");
+        x.innerHTML = "Search for comments: "
+        x.style.textAlign = 'right';
         title.innerHTML = "Comments: ";
         title.style.float = "left";
+        kom_parent.appendChild(x);
+        kom_parent.appendChild(i);
+        kom_parent.appendChild(document.createElement('br'));
         kom_parent.appendChild(title);
+        kom_parent.appendChild(document.createElement('br'));
 
         element.comments.forEach((el, index) => {
             kom = document.createElement('div');
@@ -75,8 +89,8 @@ function createGallery(){
             if (index == 0)
                 kom.style.marginTop = '50px';
             kom_parent.appendChild(kom);
-        })
-
+        });
+        kom_parent.id = "komentari";
         paren.appendChild(kom_parent);
   
         let textarea = document.createElement("Textarea");
@@ -172,4 +186,5 @@ function addPhoto() {
     document.getElementById('tatko').innerHTML = '';
     load();
 }
+
 
